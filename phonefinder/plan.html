@@ -1,191 +1,194 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>料金シミュレーション | Redmi × モバイルプラン</title>
+    <title>Yから始まる例のキャリア向け料金シミュレーション</title>
     <link rel="stylesheet" href="plan.css">
 </head>
+
 <body>
 
-<div class="container">
-    <header>
-        <h1>料金シミュレーション</h1>
-        <p>最新プランの割引をすべて反映して計算します</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Yから始まる例のキャリア向け料金シミュレーション</h1>
+            <p>ここのスマホはYから始まる例のキャリアの取り扱いはございません</p>
+        </header>
 
-    <!-- 1. Plan Selection -->
-    <div class="card">
-        <h2 class="section-title"><span>1</span> データプランを選ぶ</h2>
-        <div class="plan-grid">
-            <div class="plan-item" onclick="selectPlan('S')" data-plan="S">
-                <span class="size">S</span>
-                <span class="data">5GB / 月</span>
-            </div>
-            <div class="plan-item active" onclick="selectPlan('M')" data-plan="M">
-                <span class="size">M</span>
-                <span class="data">30GB / 月</span>
-            </div>
-            <div class="plan-item" onclick="selectPlan('L')" data-plan="L">
-                <span class="size">L</span>
-                <span class="data">35GB / 月</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. Device Selection -->
-    <div class="card">
-        <h2 class="section-title"><span>2</span> スマートフォンを選ぶ (一括払い)</h2>
-        <div class="device-list">
-            <div class="device-item active" onclick="selectDevice('Note13')" data-device="Note13">
-                <div class="device-info">
-                    <img src="img/redminote13pro.jpg" alt="">
-                    <div><strong>Redmi Note 13 Pro+ 5G</strong></div>
+        <!-- 1. Plan Selection -->
+        <div class="card">
+            <h2 class="section-title"><span>1</span> データプランを選ぶ</h2>
+            <div class="plan-grid">
+                <div class="plan-item" onclick="selectPlan('S')" data-plan="S">
+                    <span class="size">S</span>
+                    <span class="data">5GB / 月</span>
                 </div>
-                <span>38,500円</span>
-            </div>
-            <div class="device-item" onclick="selectDevice('Redmi15')" data-device="Redmi15">
-                <div class="device-info">
-                    <img src="img/redmi15.jpg" alt="">
-                    <div><strong>Redmi 15 5G</strong></div>
+                <div class="plan-item active" onclick="selectPlan('M')" data-plan="M">
+                    <span class="size">M</span>
+                    <span class="data">30GB / 月</span>
                 </div>
-                <span>20,500円</span>
-            </div>
-            <div class="device-item" onclick="selectDevice('Redmi14C')" data-device="Redmi14C">
-                <div class="device-info">
-                    <img src="img/redmi14c.jpg" alt="">
-                    <div><strong>Redmi 14C 5G</strong></div>
+                <div class="plan-item" onclick="selectPlan('L')" data-plan="L">
+                    <span class="size">L</span>
+                    <span class="data">35GB / 月</span>
                 </div>
-                <span>17,000円</span>
             </div>
-            <div class="device-item" onclick="selectDevice('Note15')" data-device="Note15">
-                <div class="device-info">
-                    <img src="img/note15.jpg" alt="">
-                    <div><strong>Redmi Note 15 5G</strong></div>
+        </div>
+
+        <!-- 2. Device Selection -->
+        <div class="card">
+            <h2 class="section-title"><span>2</span> スマートフォンを選ぶ (一括払い)</h2>
+            <div class="device-list">
+                <div class="device-item active" onclick="selectDevice('Note13')" data-device="Note13">
+                    <div class="device-info">
+                        <img src="img/redminote13pro.jpg" alt="">
+                        <div><strong>Redmi Note 13 Pro+ 5G</strong></div>
+                    </div>
+                    <span>38,500円</span>
                 </div>
-                <span>36,800円</span>
+                <div class="device-item" onclick="selectDevice('Redmi15')" data-device="Redmi15">
+                    <div class="device-info">
+                        <img src="img/redmi15.jpg" alt="">
+                        <div><strong>Redmi 15 5G</strong></div>
+                    </div>
+                    <span>20,500円</span>
+                </div>
+                <div class="device-item" onclick="selectDevice('Redmi14C')" data-device="Redmi14C">
+                    <div class="device-info">
+                        <img src="img/redmi14c.jpg" alt="">
+                        <div><strong>Redmi 14C 5G</strong></div>
+                    </div>
+                    <span>17,000円</span>
+                </div>
+                <div class="device-item" onclick="selectDevice('Note15')" data-device="Note15">
+                    <div class="device-info">
+                        <img src="img/note15.jpg" alt="">
+                        <div><strong>Redmi Note 15 5G</strong></div>
+                    </div>
+                    <span>36,800円</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Discounts: PayPay Card -->
+        <div class="card">
+            <h2 class="section-title"><span>3</span> PayPayカード割</h2>
+            <div class="option-row">
+                <div><strong>利用しない</strong></div>
+                <input type="radio" name="paypay" value="none" checked onclick="setPayPay('none')">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>PayPayカード (一般)</strong>
+                </div>
+                <span>-330円</span>
+                <input type="radio" name="paypay" value="regular" onclick="setPayPay('regular')">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>PayPayカード ゴールド</strong>
+                </div>
+                <span>-550円</span>
+                <input type="radio" name="paypay" value="gold" onclick="setPayPay('gold')">
+            </div>
+        </div>
+
+        <!-- 4. Discounts: Service (Exclusive) -->
+        <div class="card">
+            <h2 class="section-title"><span>4</span> 割引サービス（いずれか一つ）</h2>
+            <div class="option-row">
+                <div><strong>利用しない</strong></div>
+                <input type="radio" name="service" value="none-service" checked onclick="setService('none')">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>おうち割 光セット (A)</strong>
+                    <div style="font-size: 0.8rem; color: #666;">ネットセットでおトク</div>
+                </div>
+                <span>-1,650円</span>
+                <input type="radio" name="service" value="hikari" onclick="setService('hikari')">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>おうち割 でんきセット (E)</strong>
+                    <div style="font-size: 0.8rem; color: #666;">※プランSは対象外</div>
+                </div>
+                <span>-1,100円</span>
+                <input type="radio" name="service" value="denki" onclick="setService('denki')">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>家族割引サービス (2回線目以降)</strong>
+                    <div style="font-size: 0.8rem; color: #666;">ご家族みんなでおトク！ ※1回線目は対象外</div>
+                </div>
+                <span>-1,100円</span>
+                <input type="radio" name="service" value="family" onclick="setService('family')">
+            </div>
+        </div>
+
+        <!-- 5. Options -->
+        <div class="card">
+            <h2 class="section-title"><span>5</span> 通話・その他オプション</h2>
+            <div class="option-row">
+                <div><strong>通話オプションなし</strong></div>
+                <input type="radio" name="calling" checked onclick="setCalling(0)">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>だれとでも定額+</strong>
+                    <div style="font-size: 0.8rem; color: #666;">1回10分以内の国内通話無料</div>
+                </div>
+                <span>+880円</span>
+                <input type="radio" name="calling" onclick="setCalling(880)">
+            </div>
+            <div class="option-row">
+                <div>
+                    <strong>24時間いつでも定額+</strong>
+                    <div style="font-size: 0.8rem; color: #666;">24時間いつでも国内通話無料</div>
+                </div>
+                <span>+1,980円</span>
+                <input type="radio" name="calling" onclick="setCalling(1980)">
+            </div>
+            <div style="margin-top: 1.5rem;"></div>
+            <div class="option-row">
+                <div>
+                    <strong>故障安心パックプラス</strong>
+                </div>
+                <span>+759円</span>
+                <input type="checkbox" onchange="toggleWarranty()">
+            </div>
+        </div>
+
+        <!-- 6. Details -->
+        <div class="card">
+            <h2 class="section-title"><span>📝</span> お見積り詳細</h2>
+            <ul class="breakdown-list" id="breakdown">
+                <!-- Filled by JS -->
+            </ul>
+            <p style="font-size: 0.75rem; color: #666; margin-top: 10px;">
+                ※初月のみ事務手数料 (3,850円) が別途合算されます。
+            </p>
+        </div>
+    </div>
+
+    <div class="result-footer">
+        <div class="result-container">
+            <div class="price-box">
+                <span class="initial-label">初回お支払い額 (端末代込)</span>
+                <div class="initial-total"><span id="initial-total">0</span>円</div>
+            </div>
+            <div class="price-box">
+                <div class="monthly-label">2ヶ月目以降〜</div>
+                <div class="monthly-total" id="monthly-total">0<span>円/月</span></div>
+            </div>
+            <div class="cta-box">
+                <a href="easy.html" class="cta-button">機種の比較に戻る</a>
             </div>
         </div>
     </div>
 
-    <!-- 3. Discounts: PayPay Card -->
-    <div class="card">
-        <h2 class="section-title"><span>3</span> PayPayカード割</h2>
-        <div class="option-row">
-            <div><strong>利用しない</strong></div>
-            <input type="radio" name="paypay" value="none" checked onclick="setPayPay('none')">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>PayPayカード (一般)</strong>
-            </div>
-            <span>-330円</span>
-            <input type="radio" name="paypay" value="regular" onclick="setPayPay('regular')">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>PayPayカード ゴールド</strong>
-            </div>
-            <span>-550円</span>
-            <input type="radio" name="paypay" value="gold" onclick="setPayPay('gold')">
-        </div>
-    </div>
-
-    <!-- 4. Discounts: Service (Exclusive) -->
-    <div class="card">
-        <h2 class="section-title"><span>4</span> 割引サービス（いずれか一つ）</h2>
-        <div class="option-row">
-            <div><strong>利用しない</strong></div>
-            <input type="radio" name="service" value="none-service" checked onclick="setService('none')">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>おうち割 光セット (A)</strong>
-                <div style="font-size: 0.8rem; color: #666;">ネットセットでおトク</div>
-            </div>
-            <span>-1,650円</span>
-            <input type="radio" name="service" value="hikari" onclick="setService('hikari')">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>おうち割 でんきセット (E)</strong>
-                <div style="font-size: 0.8rem; color: #666;">※プランSは対象外</div>
-            </div>
-            <span>-1,100円</span>
-            <input type="radio" name="service" value="denki" onclick="setService('denki')">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>家族割引サービス (2回線目以降)</strong>
-                <div style="font-size: 0.8rem; color: #666;">ご家族みんなでおトク！ ※1回線目は対象外</div>
-            </div>
-            <span>-1,100円</span>
-            <input type="radio" name="service" value="family" onclick="setService('family')">
-        </div>
-    </div>
-
-    <!-- 5. Options -->
-    <div class="card">
-        <h2 class="section-title"><span>5</span> 通話・その他オプション</h2>
-        <div class="option-row">
-            <div><strong>通話オプションなし</strong></div>
-            <input type="radio" name="calling" checked onclick="setCalling(0)">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>だれとでも定額+</strong>
-                <div style="font-size: 0.8rem; color: #666;">1回10分以内の国内通話無料</div>
-            </div>
-            <span>+880円</span>
-            <input type="radio" name="calling" onclick="setCalling(880)">
-        </div>
-        <div class="option-row">
-            <div>
-                <strong>24時間いつでも定額+</strong>
-                <div style="font-size: 0.8rem; color: #666;">24時間いつでも国内通話無料</div>
-            </div>
-            <span>+1,980円</span>
-            <input type="radio" name="calling" onclick="setCalling(1980)">
-        </div>
-        <div style="margin-top: 1.5rem;"></div>
-        <div class="option-row">
-            <div>
-                <strong>故障安心パックプラス</strong>
-            </div>
-            <span>+759円</span>
-            <input type="checkbox" onchange="toggleWarranty()">
-        </div>
-    </div>
-
-    <!-- 6. Details -->
-    <div class="card">
-        <h2 class="section-title"><span>📝</span> お見積り詳細</h2>
-        <ul class="breakdown-list" id="breakdown">
-            <!-- Filled by JS -->
-        </ul>
-        <p style="font-size: 0.75rem; color: #666; margin-top: 10px;">
-            ※初月のみ事務手数料 (3,850円) が別途合算されます。
-        </p>
-    </div>
-</div>
-
-<div class="result-footer">
-    <div style="max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end;">
-        <div class="price-box">
-            <div><span class="initial-label">初回お支払い額 (端末代込)</span></div>
-            <div class="initial-total"><span id="initial-total">0</span>円</div>
-        </div>
-        <div class="price-box">
-            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;">2ヶ月目以降〜</div>
-            <div class="monthly-total" id="monthly-total">0<span>円/月</span></div>
-        </div>
-        <div class="cta-box">
-            <a href="easy.html" class="cta-button">機種の比較に戻る</a>
-        </div>
-    </div>
-</div>
-
-<script src="plan.js"></script>
+    <script src="plan.js"></script>
 
 </body>
+
 </html>
