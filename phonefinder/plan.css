@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Zen+Maru+Gothic:wght@400;700&display=swap');
+
+:root {
+    --primary: #ff9900; /* Orange to match Easy */
+    --primary-bg: #fff4e5;
+    --text-main: #333;
+    --text-muted: #666;
+    --border: #ffd8a8;
+    --white: #ffffff;
+    --accent-yellow: #ffcc00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffaf0;
+    color: var(--text-main);
+    font-family: 'Zen Maru Gothic', 'Outfit', sans-serif;
+    line-height: 1.6;
+    padding-bottom: 120px; /* Space for sticky footer */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title span {
+    background: var(--primary);
+    color: white;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+/* Plan Selector Grid */
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.plan-item {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.plan-item.active {
+    border-color: var(--primary);
+    background-color: var(--primary-bg);
+}
+
+.plan-item .size {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: block;
+}
+
+.plan-item .data {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Device Selector */
+.device-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.device-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.device-item.active {
+    border-color: var(--primary);
+    background-color: var(--primary-bg);
+}
+
+.device-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.device-info img {
+    width: 40px;
+    height: auto;
+}
+
+/* Options/Toggles */
+.option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.option-row input[type="checkbox"], 
+.option-row input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* Detail List */
+.breakdown-list {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.breakdown-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.breakdown-list .discount {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Result Bar Enhancements */
+.result-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+    padding: 1rem 1.5rem;
+    z-index: 100;
+}
+
+.price-box {
+    text-align: right;
+}
+
+.initial-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.initial-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.monthly-total {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.monthly-total span {
+    font-size: 1rem;
+}
+
+.cta-button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+    .result-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
