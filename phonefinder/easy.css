@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap');
+
+:root {
+    --bg: #fffdfa;
+    --text: #333;
+    --primary: #ff8c00;
+    --accent: #ff4500;
+    --good: #eaffea;
+    --border: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zen+Maru+Gothic', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 20px;
+    font-size: 1.2rem; /* Larger base font */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.card {
+     background: white;
+     border: 4px solid var(--primary);
+     border-radius: 20px;
+     padding: 15px;
+     overflow-x: auto;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+     -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0;
+    min-width: auto; /* Allow to fit container */
+    table-layout: fixed; /* Evenly distribute columns */
+}
+
+th, td {
+    padding: 10px 5px; /* Thinner padding */
+    border: 1px solid var(--border);
+    text-align: center;
+    background-color: white; 
+    word-break: break-all; /* Prevent overflow */
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    border-bottom: 2px solid var(--primary);
+}
+
+.label {
+    background-color: #fff4e5 !important;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 160px;
+    position: sticky;
+    left: 0;
+    z-index: 4; /* Higher than thead th */
+    border-right: 3px solid var(--primary) !important;
+}
+
+thead th.label {
+    z-index: 5; /* Top-left corner needs highest z-index */
+}
+
+.device-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.device-image {
+    width: 100%;
+    max-width: 100px; /* Slightly smaller images */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.big-text {
+    font-size: 1.2rem; /* Slightly smaller for fit */
+    font-weight: bold;
+    display: block;
+}
+
+.desc-text {
+    font-size: 0.9rem; /* Slightly smaller for fit */
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+.highlight-good {
+    background-color: var(--good);
+    color: #006400;
+}
+
+.footer-note {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+}
+
+/* Icons/Colors for quick understanding */
+.star {
+    color: #ffd700;
+    font-size: 1.5rem;
+}
